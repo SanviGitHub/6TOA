@@ -4,7 +4,7 @@ Bienvenido al repositorio del proyecto de la **Página Web de Curso 6to A**, una
 
 Este proyecto ha sido desarrollado con pasión y dedicación por [SanviDev](https://github.com/SanviDev), con el objetivo de ofrecer una experiencia de usuario fluida y accesible.
 
-![Página Principal](https://sanvigithub.github.io/6TOA/)
+[Página Principal](https://sanvigithub.github.io/6TOA/)
 
 ## Características
 
