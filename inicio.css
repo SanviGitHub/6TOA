@@ -1,0 +1,101 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url('background.jpg'); /* Asegúrate de tener una imagen 'background.jpg' en tu directorio */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    animation: headerAnimation 1s ease-out;
+}
+
+@keyframes headerAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    background: #006fdd;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #005cbf;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.day {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+.day h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: 1fr 1fr;
+    }
+}
