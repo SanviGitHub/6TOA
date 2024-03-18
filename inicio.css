@@ -98,4 +98,27 @@ footer {
     .calendar {
         grid-template-columns: 1fr 1fr;
     }
+
+.announcements {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.announcement h3 {
+    margin-top: 0;
+}
+
+.announcement p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.announcements h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
 }
