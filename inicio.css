@@ -122,3 +122,22 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.chismes-button-container {
+    text-align: center;
+    margin: 20px 0; /* Ajusta el margen según necesites */
+}
+
+.chismes-button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-weight: bold; /* Texto en negrita */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Efecto suave al cambiar el color de fondo */
+}
+
+.chismes-button:hover {
+    background-color: #005cbf; /* Color de fondo al pasar el ratón */
+}
