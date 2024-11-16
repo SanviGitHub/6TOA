@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - 6TO A</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h1 class="title">Crear Cuenta</h1>
+      <form id="register-form">
+        <div class="input-group">
+          <input type="email" id="reg-email" required>
+          <label for="reg-email">Correo Electrónico</label>
+          <div class="line"></div>
+        </div>
+        <div class="input-group">
+          <input type="password" id="reg-password" required>
+          <label for="reg-password">Contraseña</label>
+          <div class="line"></div>
+        </div>
+        <div class="input-group">
+          <input type="password" id="reg-confirm-password" required>
+          <label for="reg-confirm-password">Confirmar Contraseña</label>
+          <div class="line"></div>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Registrarse</span>
+          <div class="btn-fill"></div>
+        </button>
+      </form>
+      <p class="switch-form">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+    </div>
+    <div class="decoration">
+      <div class="circle"></div>
+      <div class="square"></div>
+      <div class="triangle"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBd5zxPOqP5AsqNwvCcf7ObVGqtjwBn2UA",
+      authDomain: "loginregister-e02b9.firebaseapp.com",
+      projectId: "loginregister-e02b9",
+      storageBucket: "loginregister-e02b9.appspot.com",
+      messagingSenderId: "63577091340",
+      appId: "1:63577091340:web:4aa54982cc3dad7050ad29"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    // Register form handler
+    document.getElementById('register-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('reg-email').value;
+      const password = document.getElementById('reg-password').value;
+      const confirmPassword = document.getElementById('reg-confirm-password').value;
+
+      if (password !== confirmPassword) {
+        alert('Las contraseñas no coinciden');
+        return;
+      }
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        alert('¡Registro exitoso!');
+        window.location.href = 'index.html';
+      } catch (error) {
+        alert('Error al registrarse: ' + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

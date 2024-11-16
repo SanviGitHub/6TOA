@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6to A - Colegio Jose Ingenieros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="pixel-decoration" id="pixelDecoration"></div>
+
+    <header class="animate__animated animate__fadeInDown">
+        <h1 class="logo">6to A - Colegio Jose Ingenieros</h1>
+        <button id="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#inicio" class="active nav-link"><i class="fas fa-home"></i> <span>Inicio</span></a></li>
+                <li><a href="#calendario" class="nav-link"><i class="fas fa-calendar"></i> <span>Calendario</span></a></li>
+                <li><a href="#eventos" class="nav-link"><i class="fas fa-star"></i> <span>Eventos</span></a></li>
+                <li><a href="#nosotros" class="nav-link"><i class="fas fa-users"></i> <span>Nosotros</span></a></li>
+                <li><a href="#proyectos" class="nav-link"><i class="fas fa-project-diagram"></i> <span>Proyectos</span></a></li>
+                <li><a href="#contacto" class="nav-link"><i class="fas fa-envelope"></i> <span>Contacto</span></a></li>
+                <li><button id="logout-btn" class="nav-link"><i class="fas fa-sign-out-alt"></i> <span>Cerrar Sesión</span></button></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar tema">
+            <i class="fas fa-adjust"></i>
+        </button>
+    </header>
+
+    <main>
+        <section id="inicio" class="parallax">
+            <div class="hero-content animate__animated animate__zoomIn">
+                <h2 class="glitch" data-text="Bienvenidos a 6to A">Bienvenidos a 6to A</h2>
+                <p class="typing">Descubre nuestra página oficial y nuestro viaje de aprendizaje.</p>
+                <a href="#nosotros" class="cta-button pulse">Conócenos</a>
+            </div>
+        </section>
+
+        <section id="calendario" class="animate-section">
+            <h2 class="animate__animated animate__fadeInUp">Calendario Semanal</h2>
+            <div class="calendar">
+                <div class="day">
+                    <h3>Lunes</h3>
+                    <div class="hour">8:00 - 9:00 Matemáticas</div>
+                    <div class="hour">9:00 - 10:00 Lengua</div>
+                    <div class="hour">10:00 - 11:00 Ciencias</div>
+                    <div class="hour">11:00 - 12:00 Arte</div>
+                </div>
+                <div class="day">
+                    <h3>Martes</h3>
+                    <div class="hour">8:00 - 9:00 Historia</div>
+                    <div class="hour">9:00 - 10:00 Geografía</div>
+                    <div class="hour">10:00 - 11:00 Inglés</div>
+                    <div class="hour">11:00 - 12:00 Educación Física</div>
+                </div>
+                <div class="day">
+                    <h3>Miércoles</h3>
+                    <div class="hour">8:00 - 9:00 Matemáticas</div>
+                    <div class="hour">9:00 - 10:00 Ciencias</div>
+                    <div class="hour">10:00 - 11:00 Tecnología</div>
+                    <div class="hour">11:00 - 12:00 Música</div>
+                </div>
+                <div class="day">
+                    <h3>Jueves</h3>
+                    <div class="hour">8:00 - 9:00 Lengua</div>
+                    <div class="hour">9:00 - 10:00 Historia</div>
+                    <div class="hour">10:00 - 11:00 Inglés</div>
+                    <div class="hour">11:00 - 12:00 Arte</div>
+                </div>
+                <div class="day">
+                    <h3>Viernes</h3>
+                    <div class="hour">8:00 - 9:00 Matemáticas</div>
+                    <div class="hour">9:00 - 10:00 Ciencias</div>
+                    <div class="hour">10:00 - 11:00 Educación Física</div>
+                    <div class="hour">11:00 - 12:00 Tutoría</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="eventos" class="animate-section">
+            <h2 class="animate__animated animate__fadeInUp">Eventos Recientes</h2>
+            <div class="recent-events">
+                <div class="event animate__animated animate__fadeInUp">
+                    <h3>Matinée Hoy</h3>
+                    <p>¡No te pierdas nuestra matinée después de clases!</p>
+                    <p class="event-date">Fecha: 15 de Noviembre</p>
+                </div>
+                <div class="event animate__animated animate__fadeInUp">
+                    <h3>Feria de Ciencias</h3>
+                    <p>La semana pasada tuvimos una increíble feria de ciencias.</p>
+                    <p class="event-date">Fecha: 8 de Noviembre</p>
+                </div>
+                <div class="event animate__animated animate__fadeInUp">
+                    <h3>Próximo Evento: Día del Maestro</h3>
+                    <p>Celebración especial para nuestros profesores.</p>
+                    <p class="event-date">Fecha: 21 de Noviembre</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="animate-section">
+            <h2 class="section-title animate__animated animate__fadeInUp">Nosotros</h2>
+            <p class="section-description animate__animated animate__fadeInUp">Conoce a los increíbles estudiantes que forman parte de 6to A</p>
+            <div class="students-grid">
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="niña.png" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Aranda , Morena</h3>
+                    <p class="student-description">Apasionada por Aprendizaje y socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="santi.jpg" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Viana , Santino</h3>
+                    <p class="student-description">Entusiasta del aprendizaje y programador.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="Anto.jpg" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Gonzalez , Antonella</h3>
+                    <p class="student-description">Apasionada por vivir la vida y socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="dani.jpg" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Danilo , Sanchez</h3>
+                    <p class="student-description">Amante de los trenes, construir y aprender.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="niña.png" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Ludmila Jazmin , Escobar</h3>
+                    <p class="student-description">Le encanta charlar con sus amigos y amigas, tambien le gusta aprender.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="niño.png" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Diaz da Cruz , Ciro</h3>
+                    <p class="student-description">Entusiasta del aprendizaje y socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">11</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="facu.jpg" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Facundo Valentin , May</h3>
+                    <p class="student-description">Entusiasta del aprendizaje el inteligente del salon.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="niño.png" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Lucas Nahuel , Saavedra</h3>
+                    <p class="student-description">Entusiasta del aprendizaje y socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">11</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="milton.png" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Milton Ariel , Villa</h3>
+                    <p class="student-description">Entusiasta del aprendizaje y socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="beni.png" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Nuñez , Benicio</h3>
+                    <p class="student-description">Entusiasta del aprendizaje y socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="niño.png" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Reyes Coronel, Agustín</h3>
+                    <p class="student-description">Entusiasta del aprendizaje y socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">11</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="sanchez.jpg" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Sanchez Copa, Lorenzo</h3>
+                    <p class="student-description">Entusiasta del aprendizaje y socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="maia.jpg" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Maia Ludmila , Gorosito</h3>
+                    <p class="student-description">Le encanta socializar.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+                <div class="student-card animate__animated animate__fadeInUp">
+                    <div class="student-image-container">
+                        <img src="martina.jpg" alt="Estudiante" class="student-image">
+                    </div>
+                    <h3 class="student-name">Martina , Saucedo</h3>
+                    <p class="student-description">Le encanta socializar y aprender.</p>
+                    <p class="student-age">Edad: <span class="age-number">12</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="animate-section">
+            <h2 class="animate__animated animate__fadeInUp">Proyectos</h2>
+            <p class="animate__animated animate__fadeInUp">Explora nuestros proyectos destacados y descubre nuestro potencial creativo.</p>
+            <div class="project-grid">
+                <div class="project-card animate__animated animate__fadeInUp">
+                    <h3>Proyecto dengue</h3>
+                    <p>Iniciativa para reducir los mosquitos: Aedes aegypti y más.</p>
+                </div>
+                <div class="project-card animate__animated animate__fadeInUp">
+                    <h3>Mitología griega</h3>
+                    <p>Trabajo práctico sobre la mitología griega.</p>  
+                </div>
+                <div class="project-card animate__animated animate__fadeInUp">
+                    <h3>Halloween | Inglés</h3>
+                    <p>Presentación sobre un T.P. de inglés sobre el Past y Present (Actualmente Halloween).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="animate-section">
+            <h2 class="animate__animated animate__fadeInUp">Contacto</h2>
+            <p class="animate__animated animate__fadeInUp">Conéctate con nosotros a través de nuestras redes sociales y sé parte de nuestra comunidad.</p>
+            <div class="social-links animate__animated animate__fadeInUp">
+                <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="animate__animated animate__fadeInUp">
+        <p>Diseñado con <i class="fas fa-heart"></i> por 6to A</p>
+        <p class="copyright">© 2023 Colegio Jose Ingenieros - Todos los derechos reservados</p>
+    </footer>
+
+    <script type="module">
+        // Import Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBd5zxPOqP5AsqNwvCcf7ObVGqtjwBn2UA",
+            authDomain: "loginregister-e02b9.firebaseapp.com",
+            projectId: "loginregister-e02b9",
+            storageBucket: "loginregister-e02b9.appspot.com",
+            messagingSenderId: "63577091340",
+            appId: "1:63577091340:web:4aa54982cc3dad7050ad29"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        // Check authentication state
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            }
+        });
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                window.location.href = 'login.html';
+            } catch (error) {
+                console.error('Error al cerrar sesión:', error);
+                alert('Error al cerrar sesión. Por favor, intenta de nuevo.');
+            }
+        });
+
+        // Pixel art decoration
+        const pixelDecoration = document.getElementById('pixelDecoration');
+        for (let i = 0; i < 100; i++) {
+            const pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            pixel.style.left = `${Math.random() * 100}%`;
+            pixel.style.top = `${Math.random() * 100}%`;
+            pixelDecoration.appendChild(pixel);
+        }
+
+        // Menu toggle functionality
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('show');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+            updateThemeIcon(savedTheme === 'dark-mode');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            updateThemeIcon(isDarkMode);
+            localStorage.setItem('theme', isDarkMode ? 'dark-mode' : '');
+        });
+
+        function updateThemeIcon(isDarkMode) {
+            const icon = themeToggle.querySelector('i');
+            if (isDarkMode) {
+                icon.classList.replace('fa-adjust', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-adjust');
+            }
+        }
+
+        // Smooth scroll functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        mainNav.classList.remove('show');
+                        menuToggle.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    if (entry.target.classList.contains('typing')) {
+                        typeWriter(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Typing effect
+        function typeWriter(element) {
+            const text = element.textContent;
+            element.textContent = '';
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 50);
+                }
+            }
+
+            type();
+        }
+
+        // Initialize typing effect for hero section
+        const typingElement = document.querySelector('.typing');
+        if (typingElement) {
+            typeWriter(typingElement);
+        }
+    </script>
+</body>
+</html>
