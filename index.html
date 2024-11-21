@@ -9,6 +9,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .alert-box {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            animation: fadeIn 0.5s, fadeOut 0.5s 3.5s forwards; /* Animaciones de aparición y desaparición */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        .alert-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .alert-button:hover {
+            background-color: #0056b3;
+        }
+
+        #eventos {
+            margin-top: 50px;
+        }
+
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .important-event {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            animation: fadeIn 0.5s;
+        }
+    </style>
 </head>
 <body>
     <div class="pixel-decoration" id="pixelDecoration"></div>
@@ -86,6 +145,12 @@
 
         <section id="eventos" class="animate-section">
             <h2 class="animate__animated animate__fadeInUp">Eventos Recientes</h2>
+            <div class="important-event">
+                <h3>Evento Importante</h3>
+                <p>Viaje a Mar del Plata - Escuela José Ingenieros 6to A y 6to B</p>
+                <p>¡No te pierdas esta emocionante aventura!</p>
+                <div id="countdown" class="countdown"></div> <!-- Elemento para la cuenta regresiva -->
+            </div>
             <div class="recent-events">
                 <div class="event animate__animated animate__fadeInUp">
                     <h3>Matinée Hoy</h3>
@@ -283,8 +348,37 @@
         onAuthStateChanged(auth, (user) => {
             if (!user) {
                 window.location.href = 'login.html';
+            } else {
+                // Esperar 2.5 segundos y mostrar la alerta
+                setTimeout(() => {
+                    showAlert();
+                }, 2500);
             }
         });
+
+        // Función para mostrar la alerta
+        function showAlert() {
+            const alertBox = document.createElement('div');
+            alertBox.className = 'alert-box';
+            alertBox.innerHTML = `
+                <h2>Evento nuevo</h2>
+                <p>Viaje a Mar del Plata - Escuela José Ingenieros 6to A y 6to B</p>
+                <p>¡No te pierdas esta emocionante aventura!</p>
+                <button id="go-to-events" class="alert-button">Ir</button>
+            `;
+            document.body.appendChild(alertBox);
+
+            // Redirigir a la sección de eventos al hacer clic en el botón
+            document.getElementById('go-to-events').addEventListener('click', () => {
+                document.getElementById('eventos').scrollIntoView({ behavior: 'smooth' });
+                alertBox.remove(); // Cerrar la alerta
+            });
+
+            // Cerrar la alerta después de 4 segundos
+            setTimeout(() => {
+                alertBox.remove();
+            }, 4000);
+        }
 
         // Logout functionality
         document.getElementById('logout-btn').addEventListener('click', async () => {
@@ -413,6 +507,33 @@
         if (typingElement) {
             typeWriter(typingElement);
         }
+
+        // Función para iniciar la cuenta regresiva
+        function startCountdown() {
+            const countdownDate = new Date('2024-12-03T03:00:00').getTime();
+            const countdownElement = document.getElementById('countdown');
+
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                // Si la cuenta regresiva termina, mostrar un mensaje
+                if (distance < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "¡El evento ha comenzado!";
+                }
+            }, 1000);
+        }
+
+        // Iniciar la cuenta regresiva
+        startCountdown();
     </script>
 </body>
 </html>

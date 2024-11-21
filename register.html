@@ -1,85 +1,249 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro - 6TO A</title>
-  <link rel="stylesheet" href="styles2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - 6TO A</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            background-color: #141414;
+            border-radius: 24px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .image-section {
+            flex: 1;
+            background-image: url('/back.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #a1a1aa;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: #1c1c1c;
+            border: 1px solid #2d2d2d;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #a1a1aa;
+            cursor: pointer;
+        }
+
+        .create-account-button {
+            background-color: #3b82f6;
+            color: #ffffff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        .create-account-button:hover {
+            background-color: #2563eb;
+        }
+
+        .sign-in-link {
+            text-align: center;
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 16px;
+        }
+
+        .sign-in-link:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                min-height: 200px;
+            }
+
+            .form-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="form-container">
-      <h1 class="title">Crear Cuenta</h1>
-      <form id="register-form">
-        <div class="input-group">
-          <input type="email" id="reg-email" required>
-          <label for="reg-email">Correo Electrónico</label>
-          <div class="line"></div>
+    <div class="container">
+        <div class="image-section"></div>
+        <div class="form-section">
+            <h1>Crear Cuenta</h1>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="fullName">Nombre Completo</label>
+                    <input 
+                        type="text" 
+                        id="fullName" 
+                        placeholder="Alexis Hill" 
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo Electrónico</label>
+                    <input 
+                        type="email" 
+                        id="reg-email" 
+                        placeholder="designer@example.com" 
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Contraseña</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            id="reg-password" 
+                            placeholder="Crea una contraseña" 
+                            required
+                        >
+                        <button type="button" class="password-toggle" id="togglePassword">👁️</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm-password">Confirmar Contraseña</label>
+                    <input 
+                        type="password" 
+                        id="reg-confirm-password" 
+                        placeholder="Confirma tu contraseña" 
+                        required
+                    >
+                </div>
+                <button type="submit" class="create-account-button">Registrarse</button>
+            </form>
+            <a href="login.html" class="sign-in-link">¿Ya tienes cuenta? Inicia sesión aquí</a>
         </div>
-        <div class="input-group">
-          <input type="password" id="reg-password" required>
-          <label for="reg-password">Contraseña</label>
-          <div class="line"></div>
-        </div>
-        <div class="input-group">
-          <input type="password" id="reg-confirm-password" required>
-          <label for="reg-confirm-password">Confirmar Contraseña</label>
-          <div class="line"></div>
-        </div>
-        <button type="submit" class="submit-btn">
-          <span class="btn-text">Registrarse</span>
-          <div class="btn-fill"></div>
-        </button>
-      </form>
-      <p class="switch-form">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
     </div>
-    <div class="decoration">
-      <div class="circle"></div>
-      <div class="square"></div>
-      <div class="triangle"></div>
-    </div>
-  </div>
 
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyBd5zxPOqP5AsqNwvCcf7ObVGqtjwBn2UA",
-      authDomain: "loginregister-e02b9.firebaseapp.com",
-      projectId: "loginregister-e02b9",
-      storageBucket: "loginregister-e02b9.appspot.com",
-      messagingSenderId: "63577091340",
-      appId: "1:63577091340:web:4aa54982cc3dad7050ad29"
-    };
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBd5zxPOqP5AsqNwvCcf7ObVGqtjwBn2UA",
+            authDomain: "loginregister-e02b9.firebaseapp.com",
+            projectId: "loginregister-e02b9",
+            storageBucket: "loginregister-e02b9.appspot.com",
+            messagingSenderId: "63577091340",
+            appId: "1:63577091340:web:4aa54982cc3dad7050ad29"
+        };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth();
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
 
-    // Register form handler
-    document.getElementById('register-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const email = document.getElementById('reg-email').value;
-      const password = document.getElementById('reg-password').value;
-      const confirmPassword = document.getElementById('reg-confirm-password').value;
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('reg-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                this.textContent = '👁️‍🗨️';
+            } else {
+                passwordInput.type = 'password';
+                this.textContent = '👁️';
+            }
+        });
 
-      if (password !== confirmPassword) {
-        alert('Las contraseñas no coinciden');
-        return;
-      }
+        // Register form handler
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirm-password').value;
 
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        alert('¡Registro exitoso!');
-        window.location.href = 'index.html';
-      } catch (error) {
-        alert('Error al registrarse: ' + error.message);
-      }
-    });
-  </script>
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                alert('¡Registro exitoso!');
+                window.location.href = 'index.html';
+            } catch (error) {
+                alert('Error al registrarse: ' + error.message);
+            }
+        });
+    </script>
 </body>
 </html>
